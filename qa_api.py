@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
@@ -55,4 +56,5 @@ async def create_upload_file(file: UploadFile = File(...)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)  # Используйте доступный порт
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)  # Используйте порт из переменной окружения
