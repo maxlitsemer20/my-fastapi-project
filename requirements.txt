@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+transformers
+torch
+pandas
+requests
+beautifulsoup4
+python-multipart
